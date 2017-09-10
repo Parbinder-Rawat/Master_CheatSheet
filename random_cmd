@@ -1,0 +1,18 @@
+---------------------------------------------------------------
+##~$ sudo fuser -v /dev/snd/*
+                    USER        PID ACCESS COMMAND
+/dev/snd/controlC0:  terminator   4211 F.... alsamixer
+---------------------------------------------------------
+##~$ ubuntu-support-status
+Support status summary of 'terminator'(hostname of the computer):
+
+You have 31 packages (1.3%) supported until September 2022 (5y)
+You have 1799 packages (75.8%) supported until April 2021 (5y)
+You have 452 packages (19.1%) supported until April 2019 (3y)
+
+You have 0 packages (0.0%) that can not/no-longer be downloaded
+You have 90 packages (3.8%) that are unsupported
+
+Run with --show-unsupported, --show-supported or --show-all to see more details
+-----------------------------------------------------------------
+

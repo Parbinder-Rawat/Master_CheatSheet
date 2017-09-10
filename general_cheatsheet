@@ -1,0 +1,30 @@
+==========================================
+Sound card Commands:
+--------------------
+*** Complete Sound Troubleshooting Wiki Page:
+
+https://help.ubuntu.com/community/SoundTroubleshootingProcedure
+
+
+# cat /proc/asound/cards  >>> Lists detected sound cards
+# cat /proc/asound/modules  >>> Lists loaded sound modules
+
+# less /proc/asound/card0/codec#0 | grep -iE "headphone|pin-ctl"
+ 	>> checks if headphone is detected or not, 
+	   > Pin-ctls: XXXX: OUT  --- Specify Not Detected
+	   > Pin-ctls: XXXX:	   --- no OUT Specify Detected
+	   >> we can check for all sound devices instead of headphones.
+
+# lshw -sanitize -C multimedia	>> Shows info about sound cards
+
+# amixer -c 0 control	>>> -c --- Card
+			     0 --- 1st card(mostly integrated)
+			     control --- control info's
+
+# aplay -l		>>> list all the soundcard/digital device
+
+# alsactl		>> advanced control for alsa sound card
+# alsactl store		>> store the current sound configurations.
+
+# ** Config_file of alsa is 'asound.state', we can find the exact path for this file using locate/find command.
+

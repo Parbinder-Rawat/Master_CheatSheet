@@ -43,3 +43,52 @@ central server repo.
 Fix for this error:
    # git pull origin master
 ===========================================================================================
+===================== fuser ===========================================
+fuser: shows what process are using the files, directory, socket.
+======
+SOURCE:- https://www.digitalocean.com/community/tutorials/how-to-use-the-linux-fuser-command
+
+## ~$ fuser -v .
+                     USER        PID ACCESS COMMAND
+/home/terminator:    terminator   2025 ..c.. openbox
+                     terminator   2171 ..c.. light-locker
+                     terminator   2172 ..c.. xscreensaver
+	--------------------------------------------------
+	 -v > verbose
+	 -. > '.' here is a current directory
+*************************************************************
+## ~$ sudo fuser -v /etc/*
+                     USER        PID ACCESS COMMAND
+/etc/avahi:          avahi      1120 .rc.. avahi-daemon
+/usr/lib/os-release: root       1142 f.... snapd
+*************************************************************
+## ~$ fuser -l
+HUP INT QUIT ILL TRAP ABRT IOT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM
+STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH IO PWR SYS
+UNUSED
+	------------------------------------------------
+	 -l > lists all signal which can be sent to processes.
+*************************************************************
+## ~$ sudo fuser -v -n tcp 80 or, sudo fuser -v -n tcp http
+                     USER        PID ACCESS COMMAND
+80/tcp:              root       1317 F.... nginx
+                     www-data   1318 F.... nginx
+                     www-data   1319 F.... nginx
+	---------------------------------------------------
+	 -n > used to specify tcp/udp
+	 -80 > port number or direct protocal can be used.
+*************************************************************
+## ~$ sudo fuser -i -k 80/tcp
+80/tcp:               1317  1318  1319
+Kill process 1317 ? (y/N) n
+Kill process 1318 ? (y/N) n
+Kill process 1319 ? (y/N) n
+	-------------------------------------------
+	 -k > Kill signal
+	 -i > Interact/confirm before killing the processes.
+	 -80/tcp > Here, all the processes useing tcp connection at port 80 will be killed.
+*************************************************************
+## ~$ sudo fuser -vk 80/tcp
+	---------------------------------
+	- Here, all the process using tcp conn. at port 80 will be killed without warning.
+*************************************************************
