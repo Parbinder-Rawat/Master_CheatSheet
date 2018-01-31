@@ -15,4 +15,8 @@ You have 90 packages (3.8%) that are unsupported
 
 Run with --show-unsupported, --show-supported or --show-all to see more details
 -----------------------------------------------------------------
-
+##~$ sudo update-alternatives --config editor
+or,
+##~$ select-editor
+>>>>> This is default the text Editor in Linux/Unix.
+----------------------------------------------------------

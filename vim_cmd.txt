@@ -1,0 +1,33 @@
+# VIM Commands
+--------------------------------------------
+# https://alvinalexander.com/blog/post/linux-unix/vim-commands-i-m-trying-learn-remember
+--------------------------------------------
+
+:set autoindent
+
+:syntax on
+
+:set all         (display the value of all options)
+
+:set number      (show line numbers)
+
+:set hlsearch    (highlight matching search strings)
+
+:set ignorecase  (makes searches case insensitive)
+xp               (swap two characters)
+
+:browse set      (set options using a screen-based dialog)
+
+m{letter}        (place mark)
+
+'{letter}        (go to mark)
+
+R ... <Esc>      (replace characters until <Esc> is hit)
+
+:split {file}    (split window)
+
+CTRL-Wj          (move up a window)
+
+CTRL-Wk          (move down a window)
+
+CTRL-Wo          (make the current window the only window)
