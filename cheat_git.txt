@@ -43,3 +43,12 @@ central server repo.
 
 Fix for this error:
    #git pull origin master
+   
+--------------------------------------------------------------------------------------
+To delete/move file commits, follow below steps:
+
+	# git rm file_name	>> for removing the files
+	# git rm -r dir		>>> for recursively deleting all files from the folder
+	Note:- After moving files from the local repos,need to use the above two commands before commiting.
+	# git commit -m "Message"
+	# git push origin master
