@@ -54,6 +54,7 @@ Avoid merginging of git pull with local uncommitted files:
 	* We can use 'git fetch' and 'git stash' to accomplish this.
 	*[Sources]: https://www.freecodecamp.org/news/git-pull-force-how-to-overwrite-local-changes-with-git/
 	
+	NOTE: Intial commit is required in local repo(i.e. just commit once after the local git setup), otherwise will get warning "You do not have made an initial commit"
 	# git stash	--> saves the staged/uncommited files in a separate local temp repo
 	# git fetch	--> fetch from remote repo
 	# git merge [Optional if also want to merge]	--> Merge remote repo after the fetch to local repo.
