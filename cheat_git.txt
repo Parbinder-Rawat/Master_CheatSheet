@@ -45,6 +45,21 @@ Fix for this error:
    #git pull origin master
    
 --------------------------------------------------------------------------------------
+Avoid merginging of git pull with local uncommitted files:
+
+	* Often we come accross the situation where we make local changes and when we want to push to the remote repo,
+	* we get a warning to execute "git pull" first as remote repo has been modified by other collaborator or, by any other mean.
+	* we want to pull but don't want merge with local changes or, want to our chages to committed last after the merge of remote repo.
+	* Actually 'git pull' consist of 2 action 'git fetch' & 'git merge'.
+	* We can use 'git fetch' and 'git stash' to accomplish this.
+	*[Sources]: https://www.freecodecamp.org/news/git-pull-force-how-to-overwrite-local-changes-with-git/
+	
+	# git stash	--> saves the staged/uncommited files in a separate local temp repo
+	# git fetch	--> fetch from remote repo
+	# git merge [Optional if also want to merge]	--> Merge remote repo after the fetch to local repo.
+	# git stash pop		--> bring back the stashed files back to current checkout repo and auto staged them.
+	# git push		--> Push the changes to remote repo.
+--------------------------------------------------------------------------------------
 To delete/move file commits, follow below steps:
 
 	# git rm file_name	>> for removing the files
